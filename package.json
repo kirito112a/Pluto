@@ -1,0 +1,35 @@
+{
+  "name": "v9",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@mobiscroll/react-lite": "^4.10.9",
+    "@react-navigation/bottom-tabs": "^6.5.7",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.32",
+    "@types/react-dom": "18.0.11",
+    "bootstrap": "^5.2.3",
+    "browser-router": "^0.2.0",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.2.4",
+    "mdb-react-ui-kit": "^6.0.0",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-bootstrap": "^2.7.2",
+    "react-bs-datatable": "^3.10.0",
+    "react-dom": "18.2.0",
+    "react-fast-marquee": "^1.3.5",
+    "react-native-curved-bottom-bar": "^3.2.4",
+    "react-router-dom": "^6.10.0",
+    "typescript": "5.0.3"
+  },
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.6.0"
+  }
+}
