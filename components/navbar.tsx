@@ -8,6 +8,7 @@ import Modal_Boostrap from 'react-bootstrap/Modal';
 import SignInFrom from "@/pages/signin";
 import RegisterFrom from "@/pages/signUp";
 
+
 var status = 1;
 function Navbar() {
   const [show_signin, setShow_signin] = useState(false);
@@ -19,7 +20,7 @@ function Navbar() {
 
 
   return (<>
-    <nav>
+    <nav className="NavbarMain">
       <div className="logoIMG" > <Image className="img-fluid" src="/Logo.png" width={200} height={"75"} alt="logo"></Image>
       </div>
       <Link href="/">     <svg xmlns="http://www.w3.org/2000/svg" width={20} height={20} fill="currentColor" className="homeicon bi bi-house-door-fill" viewBox="0 0 16 16">
@@ -27,14 +28,21 @@ function Navbar() {
       </svg>
 
         หน้าแรก </Link>
-      <Link href="/"> โอนย้ายสมาชิก</Link>
-      <Link href="/"> ลืมรหัสผ่าน</Link>
+      <Link href="/"> โอนย้ายสมาชิก &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down-square" viewBox="0 0 16 16">
+  <path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5z"/>
+  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2z"/>
+</svg></Link>
+      <Link href="/"> ลืมรหัสผ่าน &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down-square" viewBox="0 0 16 16">
+  <path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5z"/>
+  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2z"/>
+</svg> &nbsp;</Link>
       <div >
         <span
           onClick={openModal_signin}>
           <div id="root"></div>
-          <button type="submit">เข้าสู่ระบบ</button>
+          <button className="Login" type="submit">เข้าสู่ระบบ </button>
         </span>
+        &nbsp;&nbsp;
         <Modal_Boostrap show={show_signin} onHide={closeModal_signin}
           size="xl"
           aria-labelledby="example-custom-modal-styling-title"
@@ -84,8 +92,8 @@ function Navbar() {
                 เข้าสู่ระบบ
               </span></a></li>
 
-              <li><a className="col-12" href="#news">โอนย้ายสมาชิก</a></li>
-              <li><a className="col-12" href="#about">ลืมรหัสผ่าน</a></li>
+              <li><a className="col-12" href="#news">โอนย้ายสมาชิก </a></li>
+              <li><a className="col-12" href="#about">ลืมรหัสผ่าน </a></li>
             </ul>
           </div>
         </div>
@@ -107,7 +115,7 @@ function Navbar_user() {
   const openModal_profile = () => setShow_profile(true);
 
   return (<>
-    <nav>
+    <nav className="NavbarMain">
 
       <div className="logoIMG" > <Image className="img-fluid" src="/Logo.png" width={200} height={"75"} alt="logo"></Image>
       </div>
@@ -122,7 +130,11 @@ function Navbar_user() {
         >
           <div id="root"></div>
           <Link href="/">
-            ประวัติฝาก-ถอน</Link>
+            ประวัติฝาก-ถอน&nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down-square" viewBox="0 0 16 16">
+  <path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5z"/>
+  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2z"/>
+</svg></Link>
         </span>
         <Modal_Boostrap show={show_w_t} onHide={closeModal_w_t}
 
@@ -146,9 +158,14 @@ function Navbar_user() {
           onClick={openModal_friend}
         >
           <div id="root"></div>
-          <Link href="/">
-            ชวนเพื่อน</Link>
+          <Link href="/" >
+            ชวนเพื่อน&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-caret-down-square" viewBox="0 0 16 16">
+  <path d="M3.626 6.832A.5.5 0 0 1 4 6h8a.5.5 0 0 1 .374.832l-4 4.5a.5.5 0 0 1-.748 0l-4-4.5z"/>
+  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2z"/>
+</svg> </Link>
+
         </span>
+
         <Modal_Boostrap show={show_friend} onHide={closeModal_friend}
 
           size="xl"
@@ -168,12 +185,18 @@ function Navbar_user() {
       </div>
 
 
+
       <div >
         <span onClick={openModal_profile}>
           <div id="root"></div>
           <Link href="/">
-            ข้อมูลส่วนตัว</Link>
+            โปรไฟล์ &nbsp;
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16" >
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+            </svg></Link>
         </span>
+
         <Modal_Boostrap show={show_profile} onHide={closeModal_profile}
 
           size="xl"
@@ -192,7 +215,7 @@ function Navbar_user() {
         </Modal_Boostrap>
       </div>
       <Link href="/"  >
-        <button type="submit">ออกจากระบบ</button></Link>
+        <button className="Logout" type="submit">ออกจากระบบ</button></Link>
 
       <div className="navfooterbar_phone">
         <div className="container">
@@ -204,6 +227,7 @@ function Navbar_user() {
                   <span onClick={openModal_w_t}>
                     <div id="root"></div>
                     ประวัติฝาก-ถอน
+
                   </span>
                 </div>
               </a></li>
@@ -225,6 +249,9 @@ function Navbar_user() {
         </div>
       </div>
     </nav>
+
+
+
   </>)
 }
 
