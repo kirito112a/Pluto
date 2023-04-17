@@ -1,8 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@400&display=swap');
+
+@keyframes color {
+ 
+}
 
 body{
   font-family: 'Pridi', serif;
   background-image: radial-gradient(circle, #3550b3, #2c4ba4, #254694, #204184, #1d3c75, #283364, #2c2b54, #2b2444, #291b30, #22131f, #170b11, #000000);
+ 
+
+
 }
 nav{
   position: relative;
@@ -16,7 +23,8 @@ nav{
   border-radius: 3px;
 }
 .footer{
-  background-color: #050505;
+  color: #cfc6c6;
+  background-image: linear-gradient(to top, #5c1757, #56154c, #4f1342, #481239, #401130, #391029, #311023, #2a0f1d, #220d17, #1b0910, #110408, #000000);
 }
 .navfooterbar{
   display: none;
@@ -35,7 +43,6 @@ nav{
   background-color: #05a30d;
 }
 
-
 nav a{
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -47,7 +54,7 @@ nav p{
   color: rgb(255, 255, 255);
 }
 nav a:hover{
-  color:rgb(231, 208, 2);
+  color:rgb(231, 222, 141);
 }
 nav .logoIMG{
   justify-content: left;
@@ -80,19 +87,39 @@ nav input[type=submit] {
 }
 .regis_scope{
   z-index: 20;
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(28, 49, 49);
   text-align: center;
   position: relative;
 
 }
 
 .box_setting{
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(28, 49, 49);
   text-align: center;
+  
 }
+.box_setting input{
+  background-color: rgb(30, 31, 31);
+  color: #fffefe;
+  border-radius:5px;
+  border: 1px solid    rgb(143, 143, 77);
+  min-width: 250px;
+}
+
+.box_setting select{
+  background-color: rgb(30, 31, 31);
+  color: #fffefe;
+  border-radius:5px;
+  border: 1px solid    rgb(143, 143, 77);
+  min-width: 250px;
+}
+
+
+
+
 .table_friend{
   color: #eaeaea;
-  background-color: #fafafa;
+  background-color: rgb(28, 49, 49);
 }
 footer{
   display: block;
@@ -124,9 +151,10 @@ a{
   margin-right: 5px;
   margin-top: -5px;
 }
-.select_bank{
 
-  
+
+.conferm_btn{
+  background-color: #e0a90f;
 }
 .img_truewallet{
   margin-top: 5px;
@@ -199,7 +227,8 @@ a{
   }
 
   nav a:hover{
-    color:rgb(170, 61, 18);
+     color: rgb(228, 122, 196);
+
   }
   
   nav .logoIMG{
@@ -208,6 +237,7 @@ a{
     margin-right: auto;
     padding-left: 3%;
   }
+
   
   nav input[type=text] ,nav input[type=password]{
     display: none;
@@ -254,6 +284,7 @@ a{
   .navfooterbar,.navfooterbar_phone{
     display: flex;
     z-index: 200;
+  
     
   }
   .navfooterbar ul,.navfooterbar_phone ul {
@@ -268,7 +299,7 @@ a{
     width: 100%;
     border: 2px solid   rgb(231, 231, 179);
     border-radius: 5px;
- 
+    text-shadow: 2px 2px 5px rgb(157, 1, 172);
     
 
   }
