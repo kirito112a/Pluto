@@ -13,9 +13,8 @@ export default function navbar() {
         </footer>
 
         <footer className="text-center ">
-            <div className="container p-1"></div>
-            <div className="text-center p-2">
-            </div>
+            
+        
         </footer>
 
     </>)

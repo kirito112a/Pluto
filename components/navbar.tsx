@@ -138,7 +138,7 @@ function Navbar_user() {
         </span>
         <Modal_Boostrap show={show_w_t} onHide={closeModal_w_t}
 
-          size="xl"
+          size="lg"
           aria-labelledby="example-custom-modal-styling-title"
         >
 
@@ -168,7 +168,7 @@ function Navbar_user() {
 
         <Modal_Boostrap show={show_friend} onHide={closeModal_friend}
 
-          size="xl"
+          size="lg"
           aria-labelledby="example-custom-modal-styling-title"
         >
 
@@ -199,7 +199,7 @@ function Navbar_user() {
 
         <Modal_Boostrap show={show_profile} onHide={closeModal_profile}
 
-          size="xl"
+          size="lg"
           aria-labelledby="example-custom-modal-styling-title"
         >
 
@@ -234,7 +234,7 @@ function Navbar_user() {
               <li><a className="col-12">   <div >
                 <span onClick={openModal_profile}>
                   <div id="root"></div>
-                  ข้อมูลส่วนตัว
+                  โปรไฟล์
                 </span>
 
               </div></a></li>
