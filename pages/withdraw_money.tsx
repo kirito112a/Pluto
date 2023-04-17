@@ -7,7 +7,6 @@ function Withdraw_money() {
         <>
             <label htmlFor="" className=''><h1>ถอนเงิน</h1></label>
             <div className="img_truewallet"> <Image className="img_truewallet_hover img-fluid " src="/truewallet.png" width={150} height={30} alt="img1" ></Image></div>
-            <hr></hr>
             <Image className="img-fluid" src="/scblogo.png" width={50} height={30} alt="img1" ></Image>
             <br></br>
             <div className="bankname_account">
