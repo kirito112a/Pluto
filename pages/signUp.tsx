@@ -10,7 +10,8 @@ function RegisterFrom () {
           <div>
           <label htmlFor="" className=''><h1>สมัครสมาชิก</h1></label>
             <br></br><br></br>
-           
+            <Image className="img-fluid" src="/regis_img.png" width={120} height={"500"} alt="img1" ></Image>
+            <br></br><br></br>
             <input type="text" placeholder="เบอร์โทรศัพท์" name="email" id="email" required minLength={4} maxLength={10} size={20} pattern="[0]{1}[689]{1}[0-9]{8}" />
             <br></br>
             <br></br>
@@ -43,7 +44,7 @@ function RegisterFrom () {
               <option value="audi">เพื่อนชวน</option>
             </select>
             <hr />
-            <button type="submit" className="registerbtn">สมัครสมาชิก</button>
+            <button type="submit" className={styles.conferm_btn}>ยืนยันสมัครสมาชิก</button>
             <br></br>
             <p><a href="#"> </a></p>
           </div>

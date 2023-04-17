@@ -16,7 +16,8 @@ import Game_select from './game_select'
 import Promotions from './promotions'
 import RegisterFrom from './signUp'
 
-const status = 1;
+const status = 1
+;
 
 function Home() {
 
@@ -55,9 +56,9 @@ function Home() {
             <div className={styles.bubble}></div>
           </div>
         </section>
-        <div className={styles.line_icon} > <Image className="img-fluid" src="/line.png" width={70} height={"500"} alt="img1" ></Image>
-         
-         </div>
+        <Link href="/" className={styles.line_icon}> <Image className="img-fluid" src="/line.png" width={70} height={"500"} alt="img1" ></Image>
+        <label>แอดไลน์</label></Link>
+        
 
         <div className={styles.fly_box}>
           <Marquee gradient={false}> <span>ยินดีต้อนรับเข้าสู่เว็บไซต์ สล็อต คาสิโนออนไลน์ pgauto-108.com พร้อมระบบฝาก-ถอนออโต้ 10 วินาที พนันออนไลน์ อันดับหนึ่ง ให้บริการ สล็อต คาสิโนออนไลน์ เราให้บริการด้านการเดิมพันคาสิโนบนเว็บแบบครบวงจรตลอด 24ชม. </span> </Marquee>
@@ -80,7 +81,7 @@ function Home() {
                   <div id="root"></div>
                   สมัครสมาชิก
               </span>
-                <Modal_Boostrap show={show_register} onHide={closeModal_register} size="xl" aria-labelledby="example-custom-modal-styling-title">
+                <Modal_Boostrap show={show_register} onHide={closeModal_register} size="lg" aria-labelledby="example-custom-modal-styling-title">
 
                   <div className={styles.regis_scope}>
                     <Modal_Boostrap.Body >
@@ -202,9 +203,8 @@ function Home_user() {
             <div className={styles.bubble}></div>
           </div>
         </section>
-        <div className={styles.line_icon} > <Image className="img-fluid" src="/line.png" width={70} height={"500"} alt="img1" ></Image>
-         <label>ติดต่อ</label>
-         </div>
+        <Link href="/" className={styles.line_icon}> <Image className="img-fluid" src="/line.png" width={70} height={"500"} alt="img1" ></Image>
+        <p>แอดไลน์</p></Link>
 
         <div className={styles.fly_box}>
           <Marquee gradient={false}> <a >ยินดีต้อนรับเข้าสู่เว็บไซต์ สล็อต คาสิโนออนไลน์ pgauto-108.com พร้อมระบบฝาก-ถอนออโต้ 10 วินาที พนันออนไลน์ อันดับหนึ่ง ให้บริการ สล็อต คาสิโนออนไลน์ เราให้บริการด้านการเดิมพันคาสิโนบนเว็บแบบครบวงจรตลอด 24ชม. </a> </Marquee>
@@ -223,7 +223,7 @@ function Home_user() {
     </span>
     <Modal_Boostrap show={show_game} onHide={closeModal_game}
 
-      size="xl"
+      size="lg"
       aria-labelledby="example-custom-modal-styling-title">
 
       <div className={styles.regis_scope}>
@@ -248,7 +248,7 @@ function Home_user() {
       ฝากเงิน
     </span>
     <Modal_Boostrap show={show_topup} onHide={closeModal_topup}
-      size="xl" aria-labelledby="example-custom-modal-styling-title">
+      size="lg" aria-labelledby="example-custom-modal-styling-title">
       <div className={styles.regis_scope}>
         <Modal_Boostrap.Body >
           <p className='closeBtn' onClick={closeModal_topup} >
@@ -269,7 +269,7 @@ function Home_user() {
       ถอนเงิน
     </span>
     <Modal_Boostrap show={show_withdraw} onHide={closeModal_withdraw}
-      size="xl" aria-labelledby="example-custom-modal-styling-title"
+      size="lg" aria-labelledby="example-custom-modal-styling-title"
     >
 
       <div className={styles.regis_scope}>

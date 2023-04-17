@@ -2,6 +2,7 @@ import { profile } from 'console';
 import Image from 'next/image';
 import Table from 'react-bootstrap/Table';
 import Link from 'next/link';
+import styles from '@/styles/Home.module.css'
 
 function Friend() {
     return (
@@ -18,7 +19,7 @@ function Friend() {
                 <label htmlFor="" className=''> <h4>ประวัติการชวน</h4></label>
                 <hr></hr>
 
-                        <div className='table_friend'>
+                        <div className={styles.table_show}>
                             <Table striped bordered hover responsive>
                                 <thead>
                                     <tr>

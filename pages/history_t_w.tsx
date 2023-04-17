@@ -2,6 +2,7 @@ import { profile } from 'console';
 import Image from 'next/image';
 import Table from 'react-bootstrap/Table';
 import Link from 'next/link';
+import styles from '@/styles/Home.module.css'
 
 function History_t_y() {
     return (
@@ -13,7 +14,7 @@ function History_t_y() {
                 <br></br>   <br></br>
                 <hr></hr>
                 <label htmlFor="" className=''> <h4>ประวัติฝาก-ถอน</h4></label>
-                <div className='table_friend'>
+                <div className={styles.table_show}>
                     <Table striped bordered hover responsive>
                         <thead>
                             <tr>

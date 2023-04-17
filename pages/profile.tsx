@@ -24,7 +24,7 @@ function ProfileMe() {
                 </Image>
                 <br></br>
                 <div className="bankname_account">  
-                <label htmlFor="" ><b>เมธี หีบหงส์ </b><a> 797720642</a></label>
+                <label htmlFor="" ><a>เมธี หีบหงส์ </a><a> 797720642</a></label>
                 </div>
                 <hr></hr>
                 <label htmlFor="" ><a>*ต้องการเปลี่ยนบัญชี กรุณาติดต่อ <Link href="/"> <b>ฝ่ายบริการลูกค้า</b></Link></a> </label>
