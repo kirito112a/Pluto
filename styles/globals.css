@@ -1,15 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@300&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@500&display=swap');
 
 body{
   font-family: 'Pridi', serif;
   background-image: radial-gradient(circle, #3550b3, #2c4ba4, #254694, #204184, #1d3c75, #283364, #2c2b54, #2b2444, #291b30, #22131f, #170b11, #000000);
-
 }
 nav{
   position: relative;
-  background-image: radial-gradient(circle, #1a1b1b, #1a1b1b, #1a1b1b, #1a1b1b, #1a1b1b, #171818, #141515, #111212, #0e0e0f, #0a0a0a, #050505, #000000);
+  background-image: linear-gradient(to bottom, #5c1757, #56154c, #4f1342, #481239, #401130, #391029, #311023, #2a0f1d, #220d17, #1b0910, #110408, #000000);
   margin-top: 0px ;
   padding: 10px 0;
   display: flex;
@@ -26,6 +23,16 @@ nav{
 }
 .navfooterbar_phone{
   display: none;
+}
+
+.Logout,.Login{
+  border-radius: 10px;
+}
+.Logout:hover{
+   background-color: #ce3939;
+}
+.Login:hover{
+  background-color: #05a30d;
 }
 
 
@@ -109,7 +116,7 @@ a{
 
 }
 .closeBtn:hover{
-  color: #ec0c0c;
+  color: #ec0ca1;
 
 }
 
@@ -173,7 +180,6 @@ a{
 @media screen and (max-width : 480px){
  
   nav{
-    background-image: radial-gradient(circle, #1a1b1b, #1a1b1b, #1a1b1b, #1a1b1b, #1a1b1b, #171818, #141515, #111212, #0e0e0f, #0a0a0a, #050505, #000000);
     margin: 5px auto;
     margin-top: 0px ;
     padding: 10px 0;
@@ -183,7 +189,7 @@ a{
     border: 1px solid   rgb(231, 231, 179);
     border-radius: 1px;
   }
-  nav a{
+  .NavbarMain a{
     display: none;
     color: rgb(255, 255, 255);
     text-decoration: none;
