@@ -5,26 +5,72 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/navbar'
 import Footer from '@/components/footer'
-import Link from "next/link"
 import Carousel from 'react-bootstrap/Carousel';
 import Marquee from "react-fast-marquee";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal_Boostrap from 'react-bootstrap/Modal';
 import Withdraw_money from './withdraw_money'
 import Topup from './topuop'
 import Game_select from './game_select'
 import Promotions from './promotions'
+import Contaxt from './contaxt'
+import Link from 'next/link'
+import { MDBRipple } from 'mdb-react-ui-kit';
 import RegisterFrom from './signUp'
+import CloseBtn from './prop/close_btn'
+import Buble from './prop/bubble'
+import Advert1 from './prop/advert1'
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
-const status = 1
-;
-
+const status = 0
+  ;
 function Home() {
 
-  const [show_register, setShow_register] = useState(false);
+  const [sportList, setSportList] = useState([]);
 
+  const [selectedCategory, setSelectedCategory] = useState();
+
+
+  const [show_popup1, setShow_popup1] = useState(false);
+  const closeModal_popup1 = () => setShow_popup1(false);
+  const openModal_popup1 = () => setShow_popup1(true);
+
+
+  const [show_popup2, setShow_popup2] = useState(false);
+  const closeModal_popup2 = () => setShow_popup2(false);
+  const openModal_popup2 = () => setShow_popup2(true);
+
+  const [show_popup3, setShow_popup3] = useState(false);
+  const closeModal_popup3 = () => setShow_popup3(false);
+  const openModal_popup3 = () => setShow_popup3(true);
+
+  useEffect(() => {
+    const onPageLoad = () => {
+      setShow_popup1(true);
+      setShow_popup2(true);
+      setShow_popup3(true);
+
+    };
+
+
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad);
+      return () => window.removeEventListener('load', onPageLoad);
+    }
+  }, []);
+
+
+
+  const [show_register, setShow_register] = useState(false);
   const closeModal_register = () => setShow_register(false);
   const openModal_register = () => setShow_register(true);
+
+
+
+
 
   return (
     <>
@@ -34,120 +80,93 @@ function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar ></Navbar>
-      
+
+      <Buble></Buble>
+
       <div className='container'>
+        <Contaxt></Contaxt>
 
-        <section className={styles.sticky}>
-          <div className={styles.bubbles}>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-          </div>
-        </section>
-        <Link href="/" className={styles.line_icon}> <Image className="img-fluid" src="/line.png" width={70} height={"500"} alt="img1" ></Image>
-        <label>แอดไลน์</label></Link>
-        
-
-        <div className={styles.fly_box}>
-          <Marquee gradient={false}> <span>ยินดีต้อนรับเข้าสู่เว็บไซต์ สล็อต คาสิโนออนไลน์ pgauto-108.com พร้อมระบบฝาก-ถอนออโต้ 10 วินาที พนันออนไลน์ อันดับหนึ่ง ให้บริการ สล็อต คาสิโนออนไลน์ เราให้บริการด้านการเดิมพันคาสิโนบนเว็บแบบครบวงจรตลอด 24ชม. </span> </Marquee>
+        <div className={styles.imgmain1} > <Image className=" img-fluid" src="/kinghead.png" width={12000} height={"400"} alt="img1" ></Image>
         </div>
-        
+
         <nav className={styles.menu_button}>
-        
-
-              <div className={styles.box}>
-                <Link href="#promotions" className={styles.gamestart}>โปรโมชัน</Link>
-              </div>
-
-
-          
-
-              <div className={styles.box}>
-              <span
-                  onClick={openModal_register}
-                  className={styles.gamestart}>
-                  <div id="root"></div>
-                  สมัครสมาชิก
-              </span>
-                <Modal_Boostrap show={show_register} onHide={closeModal_register} size="lg" aria-labelledby="example-custom-modal-styling-title">
-
-                  <div className={styles.regis_scope}>
-                    <Modal_Boostrap.Body >
-                      <p className='closeBtn' onClick={closeModal_register} >
-                        X
-                      </p>
-                      <RegisterFrom></RegisterFrom>
-                    </Modal_Boostrap.Body>
-                  </div>
-
-                </Modal_Boostrap>
-              </div>
-
-              <div className={styles.box}>
-
-                <Link href="" className={styles.gamestart} > ติดต่อ</Link>
-              </div>
-       
-
-          </nav>
-
-
-        <div className={styles.container}>
-
-          <div className={styles.imgmain1} > <Image className="img-fluid" src="/present.png" width={9000} height={"500"} alt="img1" ></Image>
-         
+          <div className={styles.box}>
+            <Link href={"#promotions"} className={styles.gamestart}>โปรโมชัน</Link>
           </div>
 
 
+          <div className={styles.box}>
+            <span
+              onClick={openModal_register}
+              className={styles.gamestart}>
+              <div id="root"></div>
+              สมัครสมาชิก
+            </span>
+            <Modal_Boostrap show={show_register} onHide={closeModal_register} size="lg" aria-labelledby="example-custom-modal-styling-title">
 
+              <div className={styles.regis_scope}>
+                <Modal_Boostrap.Body >
+                  <p className='closeBtn' onClick={closeModal_register} > X </p>
+                  <RegisterFrom></RegisterFrom>
+                </Modal_Boostrap.Body>
+              </div>
+
+            </Modal_Boostrap>
+          </div>
+          <div className={styles.box}>
+            <Link href="" className={styles.gamestart} > ติดต่อ</Link>
+          </div>
+        </nav>
+
+
+
+        <div className={styles.game}>
+          <div className='row '>
+
+            <div className={styles.gamebock}>
+              <div className="col-6 boximgzoom ">
+                <img className="imgzoom img-fluid" src="/game1.png" alt="img1" ></img>
+              </div>
+            </div>
+
+            <div className={styles.gamebock}>
+              <div className="col-6 boximgzoom ">
+                <img className="imgzoom img-fluid" src="/game2.png" alt="img1" ></img>
+              </div>
+            </div>
+            <div className={styles.gamebock}>
+              <div className="col-6 boximgzoom ">
+                <img className="imgzoom img-fluid" src="/game3.png" alt="img1" ></img>
+              </div>
+            </div>
+            <div className={styles.gamebock}>
+              <div className="col-6 boximgzoom ">
+                <img className="imgzoom img-fluid" src="/game4.png" alt="img1" ></img>
+              </div>
+            </div>
+            <div className={styles.gamebock}>
+              <div className="col-6 boximgzoom ">
+                <img className="imgzoom img-fluid" src="/game4.png" alt="img1" ></img>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+
+        <div className={styles.imgmain1} > <Image className="img-fluid" src="/pv_friend1.gif" width={1300} height={"500"} alt="img1" ></Image>
+        </div>
+
+
         <div className={styles.imgmain2} > <Image className="img-fluid" src="/promote.png" width={1300} height={"500"} alt="img1" ></Image>
         </div>
-        <div className={styles.imgmain2} > <Image className="img-fluid" src="/allgameimg.png" width={1300} height={"500"} alt="img1" ></Image>
-        </div>
-        <div className={styles.imgmain2} > <Image className="img-fluid" src="/minigmeimg.png" width={1300} height={"500"} alt="img1" ></Image>
-        </div>
 
-
-        <div className={styles.imgmain2} id="promotions" >
-          <Carousel fade>
-            <Carousel.Item>
-              <Image className="img-fluid" src="/freecrdit.png" width={1300} height={"500"} alt="img1" ></Image>
-
-              <Carousel.Caption>
-
-              </Carousel.Caption>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <Image className="img-fluid" src="/pro2.png" width={1300} height={"500"} alt="img1" ></Image>
-              <Carousel.Caption>
-              </Carousel.Caption>
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <Image className="img-fluid" src="/pro3.png" width={1300} height={"500"} alt="img1" ></Image>
-              <Carousel.Caption>
-              </Carousel.Caption>
-            </Carousel.Item>
-
-          </Carousel>
-        </div>
 
         <div className={styles.imgmain2} > <Image className="img-fluid" src="/bank_all.png" width={1300} height={"500"} alt="img1" ></Image>
         </div>
+
+
+
       </div>
 
       <Footer></Footer>
@@ -156,8 +175,11 @@ function Home() {
 
 }
 
+
+
+
 function Home_user() {
- 
+
   const [show_promotions, setShow_promotions] = useState(false);
   const [show_withdraw, setShow_withdraw] = useState(false);
   const [show_topup, setShowtopup] = useState(false);
@@ -184,27 +206,9 @@ function Home_user() {
       <Navbar></Navbar>
       <div className='container'>
 
-        <section className={styles.sticky}>
-          <div className={styles.bubbles}>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-            <div className={styles.bubble}></div>
-          </div>
-        </section>
-        <Link href="/" className={styles.line_icon}> <Image className="img-fluid" src="/line.png" width={70} height={"500"} alt="img1" ></Image>
-        <p>แอดไลน์</p></Link>
+        <Buble></Buble>
+
+        <Contaxt></Contaxt>
 
         <div className={styles.fly_box}>
           <Marquee gradient={false}> <a >ยินดีต้อนรับเข้าสู่เว็บไซต์ สล็อต คาสิโนออนไลน์ pgauto-108.com พร้อมระบบฝาก-ถอนออโต้ 10 วินาที พนันออนไลน์ อันดับหนึ่ง ให้บริการ สล็อต คาสิโนออนไลน์ เราให้บริการด้านการเดิมพันคาสิโนบนเว็บแบบครบวงจรตลอด 24ชม. </a> </Marquee>
@@ -214,111 +218,113 @@ function Home_user() {
         <nav className={styles.menu_button}>
 
 
-  <div className={styles.box}>
-    <span
-      onClick={openModal_game}
-      className={styles.gamestart}>
-      <div id="root"></div>
-      เริ่มเกม
-    </span>
-    <Modal_Boostrap show={show_game} onHide={closeModal_game}
+          <div className={styles.box}>
+            <span
+              onClick={openModal_game}
+              className={styles.gamestart}>
+              <div id="root"></div>
+              เริ่มเกม
+            </span>
+            <Modal_Boostrap show={show_game} onHide={closeModal_game}
 
-      size="lg"
-      aria-labelledby="example-custom-modal-styling-title">
+              size="lg"
+              aria-labelledby="example-custom-modal-styling-title">
 
-      <div className={styles.regis_scope}>
-        <Modal_Boostrap.Body >
-          <p className='closeBtn' onClick={closeModal_game} >
-            X
-          </p>
-          <Game_select></Game_select>
-        </Modal_Boostrap.Body>
-      </div>
-   
-    </Modal_Boostrap>
-  </div>
+              <div className={styles.regis_scope}>
+                <Modal_Boostrap.Body >
+                  <p className='closeBtn' onClick={closeModal_game} >
+                    X
+                  </p>
+                  <Game_select></Game_select>
+                </Modal_Boostrap.Body>
+              </div>
 
-
-
-  <div className={styles.box}>
-    <span
-      onClick={openModal_topup}
-      className={styles.gamestart}>
-      <div id="root"></div>
-      ฝากเงิน
-    </span>
-    <Modal_Boostrap show={show_topup} onHide={closeModal_topup}
-      size="lg" aria-labelledby="example-custom-modal-styling-title">
-      <div className={styles.regis_scope}>
-        <Modal_Boostrap.Body >
-          <p className='closeBtn' onClick={closeModal_topup} >
-            X
-          </p>
-          <Topup></Topup>
-        </Modal_Boostrap.Body>
-      </div>
-
-    </Modal_Boostrap>
-  </div>
-
-  <div className={styles.box}>
-    <span
-      onClick={openModal_withdraw}
-      className={styles.gamestart}>
-      <div id="root"></div>
-      ถอนเงิน
-    </span>
-    <Modal_Boostrap show={show_withdraw} onHide={closeModal_withdraw}
-      size="lg" aria-labelledby="example-custom-modal-styling-title"
-    >
-
-      <div className={styles.regis_scope}>
-        <Modal_Boostrap.Body >
-          <p className='closeBtn' onClick={closeModal_withdraw} >
-            X
-          </p>
-          <Withdraw_money></Withdraw_money>
-        </Modal_Boostrap.Body>
-      </div>
-
-    </Modal_Boostrap>
-  </div>
-
-  <div className={styles.box}>
-    <span
-      onClick={openModal_promotions}
-      className={styles.gamestart}>
-      <div id="root"></div>
-      โปรโมชัน
-    </span>
-    <Modal_Boostrap show={show_promotions} onHide={closeModal_promotions}
-
-      size="xl"
-      aria-labelledby="example-custom-modal-styling-title">
-      <div className={styles.regis_scope}>
-        <Modal_Boostrap.Body >
-          <p className='closeBtn' onClick={closeModal_promotions} >
-            X
-          </p>
-          <Promotions></Promotions>
-        </Modal_Boostrap.Body>
-      </div>
-
-    </Modal_Boostrap>
-  </div>
+            </Modal_Boostrap>
+          </div>
 
 
-</nav>
+
+          <div className={styles.box}>
+            <span
+              onClick={openModal_topup}
+              className={styles.gamestart}>
+              <div id="root"></div>
+              ฝากเงิน
+            </span>
+            <Modal_Boostrap show={show_topup} onHide={closeModal_topup}
+              size="lg" aria-labelledby="example-custom-modal-styling-title">
+              <div className={styles.regis_scope}>
+                <Modal_Boostrap.Body >
+                  <p className='closeBtn' onClick={closeModal_topup} >
+                    X
+                  </p>
+                  <Topup></Topup>
+                </Modal_Boostrap.Body>
+              </div>
+
+            </Modal_Boostrap>
+          </div>
+
+          <div className={styles.box}>
+            <span
+              onClick={openModal_withdraw}
+              className={styles.gamestart}>
+              <div id="root"></div>
+              ถอนเงิน
+            </span>
+            <Modal_Boostrap show={show_withdraw} onHide={closeModal_withdraw}
+              size="lg" aria-labelledby="example-custom-modal-styling-title"
+            >
+
+              <div className={styles.regis_scope}>
+                <Modal_Boostrap.Body >
+                  <p className='closeBtn' onClick={closeModal_withdraw} >
+                    X
+                  </p>
+                  <Withdraw_money></Withdraw_money>
+                </Modal_Boostrap.Body>
+              </div>
+
+            </Modal_Boostrap>
+          </div>
+
+          <div className={styles.box}>
+            <span
+              onClick={openModal_promotions}
+              className={styles.gamestart}>
+              <div id="root"></div>
+              โปรโมชัน
+            </span>
+            <Modal_Boostrap show={show_promotions} onHide={closeModal_promotions}
+
+              size="xl"
+              aria-labelledby="example-custom-modal-styling-title">
+              <div className={styles.regis_scope}>
+                <Modal_Boostrap.Body >
+                  <p className='closeBtn' onClick={closeModal_promotions} >
+                    X
+                  </p>
+                  <Promotions></Promotions>
+                </Modal_Boostrap.Body>
+              </div>
+
+            </Modal_Boostrap>
+          </div>
+
+
+        </nav>
+
+
 
 
 
         <div className={styles.container}>
           <div className={styles.imgmain1} > <Image className="img-fluid" src="/present.png" width={9000} height={"400"} alt="img1" ></Image>
-         
+
           </div>
 
         </div>
-       
+
         <div className={styles.imgmain2} > <Image className="img-fluid" src="/promote.png" width={1300} height={"500"} alt="img1" ></Image>
         </div>
         <div className={styles.imgmain2} > <Image className="img-fluid" src="/allgameimg.png" width={1300} height={"500"} alt="img1" ></Image>
@@ -356,10 +362,150 @@ function Home_user() {
 
 }
 
+
+function Home_user2() {
+
+  const [show_promotions, setShow_promotions] = useState(false);
+  const [show_withdraw, setShow_withdraw] = useState(false);
+  const [show_topup, setShowtopup] = useState(false);
+  const [show_game, setShow_game] = useState(false);
+
+  const closeModal_topup = () => setShowtopup(false);
+  const openModal_topup = () => setShowtopup(true);
+
+  const closeModal_withdraw = () => setShow_withdraw(false);
+  const openModal_withdraw = () => setShow_withdraw(true);
+
+  const closeModal_promotions = () => setShow_promotions(false);
+  const openModal_promotions = () => setShow_promotions(true);
+
+  const closeModal_game = () => setShow_game(false);
+  const openModal_game = () => setShow_game(true);
+
+  return (
+    <>
+      <Head>
+        <meta name="description" content="Generated by create next app" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <Navbar></Navbar>
+      <div className={styles.fly_box}>
+          <Marquee gradient={false}> <a >ยินดีต้อนรับเข้าสู่เว็บไซต์ สล็อต คาสิโนออนไลน์ pgauto-108.com พร้อมระบบฝาก-ถอนออโต้ 10 วินาที พนันออนไลน์ อันดับหนึ่ง ให้บริการ สล็อต คาสิโนออนไลน์ เราให้บริการด้านการเดิมพันคาสิโนบนเว็บแบบครบวงจรตลอด 24ชม. </a> </Marquee>
+        </div>
+      <br></br>      <br></br>      <br></br>
+
+      
+      <div className={'container'}>
+
+        <Buble></Buble>
+
+        <Contaxt></Contaxt>
+
+        
+
+        <div className={styles.ctrl}>
+
+
+          <div className={styles.game}>
+
+
+          <div className='row '>
+          <div className={styles.head_ctrl}>
+          <a className={styles.play_btn} href="#"></a>
+          </div>
+          </div>
+
+
+
+            <div className='row '>
+
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                  <img className="ctrlZoom img-fluid" src="/game1.png" alt="img1" ></img>
+                </div>
+              </div>
+
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                  <img className="ctrlZoom img-fluid" src="/game2.png" alt="img1" ></img>
+                </div>
+              </div>
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                  <img className="ctrlZoom img-fluid" src="/game3.png" alt="img1" ></img>
+                </div>
+              </div>
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                <img className="ctrlZoom img-fluid" src="/game4.png" alt="img1" ></img>
+              </div>
+               </div>
+               
+            </div>
+
+
+            
+            <div className='row '>
+
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                  <img className="ctrlZoom img-fluid" src="/game1.png" alt="img1" ></img>
+                </div>
+              </div>
+
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                  <img className="ctrlZoom img-fluid" src="/game2.png" alt="img1" ></img>
+                </div>
+              </div>
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                  <img className="ctrlZoom img-fluid" src="/game3.png" alt="img1" ></img>
+                </div>
+              </div>
+              <div className={styles.ctrl_box}>
+                <div className="col-4 boximgzoom ">
+                <img className="ctrlZoom img-fluid" src="/game4.png" alt="img1" ></img>
+              </div>
+               </div>
+               
+            </div>
+            
+  
+
+
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+      </div>
+      <Footer></Footer>
+      <div id="root"></div>
+    </>)
+
+}
+
+
+
+
+
 if (status > 0) {
-  var Home_Run = Home_user;
+  var Home_Run = Home_user2;
 }
 else {
   var Home_Run = Home;
 }
 export default Home_Run
+
+
+
+
+
+
+

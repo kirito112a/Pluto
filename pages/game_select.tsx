@@ -9,11 +9,15 @@ function Game_select() {
         <div className='drop_data'>
                 <label htmlFor="" className=''><h1>เลือกเกม</h1>  </label>
                 <hr></hr>
-                <div className="img_truewallet"> <Image className="img_truewallet_hover img-fluid "  src="/betflix.png"  height={100} width={250} alt="img1" ></Image> </div>
-                <label htmlFor="" className=''>  <Link href="#"> Betflix</Link> </label>
+
+                <div className="img_truewallet">  <Link href="#"> <Image className="img_truewallet_hover img-fluid "  src="/betflix.png"  height={100} width={250} alt="img1" ></Image> 
+                <p  className=''> Betflix  </p>
+                </Link> </div>
+
                 <hr></hr>
-                <div className="img_truewallet"> <Image className="img_truewallet_hover img-fluid "  src="/spin.png"  height={100} width={250} alt="img1" ></Image> </div>
-                <label htmlFor="" className=''>  <Link href="#"> เกมกงล้อ</Link> </label>
+                <div className="img_truewallet">  <Link href="#"> <Image className="img_truewallet_hover img-fluid "  src="/spin.png"  height={100} width={250} alt="img1" ></Image> 
+                <p  className=''> เกมกงล้อ </p>
+                </Link> </div>
             </div>
         </>
     );
