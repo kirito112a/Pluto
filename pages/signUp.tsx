@@ -35,7 +35,7 @@ export default function RegisterFrom() {
 
   /** Group the person input fields in a component */
   const PhoneFields = () => (
-    <div className='box_setting' >
+    <div className='box_setting2' >
       <section  >
 
 
@@ -79,7 +79,7 @@ export default function RegisterFrom() {
   const ContactFields = () => (
 
         <section className={styles.inputGroup}>
-          <div className='box_setting' >
+          <div className='box_setting2' >
             <div>
               <div>
                 <br></br><br></br>

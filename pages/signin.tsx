@@ -6,7 +6,7 @@ import Link from 'next/link'
 function SignInFrom () {
   return (
 
-    <div className='box_setting' >
+    <div className='box_setting2' >
       <div>
           <div>
           <label htmlFor="" className=''><h1>เข้าสู่ระบบ</h1></label>
