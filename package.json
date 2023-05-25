@@ -1,9 +1,8 @@
 {
-  "name": "v9",
+  "name": "v7",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predeploy": "npm run build",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -11,6 +10,7 @@
   },
   "dependencies": {
     "@mobiscroll/react-lite": "^4.10.9",
+    "@netlify/plugin-nextjs": "^4.37.1",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@types/node": "18.15.11",
     "@types/react": "18.0.32",
